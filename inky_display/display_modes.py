@@ -22,7 +22,7 @@ def get_stored_image():
 
     return im
 
-    
+
 
 def get_inspirobot():
 
@@ -39,7 +39,7 @@ def get_inspirobot():
 
     #white background
     base_image = Image.new('RGBA', (800,800), (255,255,255,255))
-    base_image.paste(img, 160)
+    base_image.paste(img, (160, 0))
 
 
     return base_image
