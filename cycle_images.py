@@ -19,8 +19,8 @@ border_colors = ['Black', 'White', 'Green', 'Blue', 'Red', 'Yellow', 'Orange']
 saturation = 0.7
 
 #define times for nighttime mode
-start = datetime.time(19,0,0)
-end = datetime.time(23,59,59)
+start = datetime.time(9,0,0)
+end = datetime.time(17,0,0)
 
 now = datetime.datetime.now().time()
 if helpers.time_in_range(start, end, now):
