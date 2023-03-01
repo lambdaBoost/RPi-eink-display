@@ -38,7 +38,7 @@ def get_inspirobot():
     img = img.resize((480,480))
 
     #white background
-    base_image = Image.new('RGBA', (800,800), (255,255,255,255))
+    base_image = Image.new('RGBA', (800,480), (255,255,255,255))
     base_image.paste(img, (160, 0))
 
 
