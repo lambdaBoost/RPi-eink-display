@@ -10,9 +10,9 @@ COPY ./cycle_images.py /code/
 
 COPY ./requirements.txt /code/requirements.txt 
 
-RUN apt update
+RUN apt-get update -y
 
-RUN apt install  samba-common smbclient samba-common-bin smbclient  cifs-utils
+RUN apt-get install  -y samba-common smbclient samba-common-bin smbclient  cifs-utils
 
 RUN pip install --upgrade -r /code/requirements.txt
 
