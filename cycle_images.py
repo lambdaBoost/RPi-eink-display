@@ -26,7 +26,7 @@ now = datetime.datetime.now().time()
 if helpers.time_in_range(start, end, now):
     im = display_modes.get_inspirobot()
 else:
-    im = display_modes.get_stored_image()
+    im = display_modes.get_network_image()
 
         
 #set to inky internal buffer

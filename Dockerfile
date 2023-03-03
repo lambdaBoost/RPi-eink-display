@@ -30,4 +30,6 @@ RUN pip install --upgrade -r /code/requirements.txt
 
 RUN mkdir /mnt/pi_smb
 
-RUN mount -t cifs //192.168.1.24/public /mnt/pi_smb
+RUN mount -t cifs //192.168.1.24/Public /mnt/pi_smb
+
+CMD ["python3", "cycle_images.py"]
