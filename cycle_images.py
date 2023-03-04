@@ -5,13 +5,11 @@ import datetime
 import random
 import inky
 from inky.auto import auto
-import RPi.GPIO as GPIO
+from gpiozero import LED
 from inky_display import display_modes, helpers
 
-GPIO.setmode(GPIO.BCM)
-
-#board 7 is gpio 4
-GPIO.setup(18, GPIO.OUT)
+#have to use gpiozero due to docker insanity with rpi.gpio
+POWERPIN = LED(18)
 
 #display setup
 display = auto()
@@ -41,6 +39,6 @@ display.show()
 time.sleep(5)
 
 #done pin (switch off pi)
-GPIO.output(18,GPIO.HIGH)
+POWERPIN.on()
 
 
