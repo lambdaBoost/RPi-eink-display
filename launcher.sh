@@ -1,2 +1,2 @@
-cd /home/pi/public/RPi-eink-display
+cd /home/pi/RPi-eink-display
 python3 cycle_images.py
