@@ -4,15 +4,15 @@ import time
 import datetime
 import random
 import inky
-from inky.auto import auto
-from gpiozero import LED
+from inky.inky_ac073tc1a import Inky as InkyAC073TC1A
+import RPi.GPIO as GPIO
 from inky_display import display_modes, helpers
 
-#have to use gpiozero due to docker insanity with rpi.gpio
-POWERPIN = LED(18)
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(18, GPIO.OUT)
 
 #display setup
-display = auto()
+display = InkyAC073TC1A(resolution=(800, 480))
 border_colors = ['Black', 'White', 'Green', 'Blue', 'Red', 'Yellow', 'Orange']
 saturation = 0.7
 
@@ -20,11 +20,11 @@ saturation = 0.7
 start = datetime.time(9,0,0)
 end = datetime.time(17,0,0)
 
-now = datetime.datetime.now().time()
-if helpers.time_in_range(start, end, now):
-    im = display_modes.get_inspirobot()
-else:
-    im = display_modes.get_network_image()
+#now = datetime.datetime.now().time()
+#if helpers.time_in_range(start, end, now):
+#    im = display_modes.get_inspirobot()
+#else:
+im = display_modes.get_network_image()
 
         
 #set to inky internal buffer
@@ -39,6 +39,6 @@ display.show()
 time.sleep(5)
 
 #done pin (switch off pi)
-POWERPIN.on()
+GPIO.output(18,GPIO.HIGH)
 
 
