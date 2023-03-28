@@ -2,6 +2,8 @@
 
 This project uses a Pimoroni Inky 7 color e-ink display to intermittantly display an image using a Raspberry Pi zero. I use this to display my Son's artwork but it could be used for anything which requires an image to be displayed and refreshed at relativley long (>1hr) intervals.
 
+![quick demo](/schematics/eink.jpg)
+
 Everything is enclosed in a single picture frame and battery powered, with integrated charging via a TP4056.
 
 The Raspberry Pi is normally off and is triggered to activate using an Adafruit external timer IC. There are cheaper ways of doing this but this is probably the easiest and doesnt even require a PCB - I just built it on perfboard.
